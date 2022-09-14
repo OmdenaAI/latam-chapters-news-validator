@@ -24,4 +24,4 @@ The API is deployed in a [micro](https://docs.deta.sh/docs/micros/about) Deta in
 
 ## Workflow
 
-![Workflow](Web extension.png)
+![Workflow]("./Web extension.png")
