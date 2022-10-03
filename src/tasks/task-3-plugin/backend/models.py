@@ -1,13 +1,27 @@
 from pydantic import BaseModel
 
+#
+# Models for reporting requests
+#
 
-class Input(BaseModel):
+class ReportInput(BaseModel):
     site_name: str
     url: str
     document: str
     label: str
 
-class Response(BaseModel):
+class ReportResponse(BaseModel):
     name: str
     document: str
     label: str
+
+#
+# Models for contextualization requests
+#
+
+class ContextInput(BaseModel):
+    url: str
+
+class ContextResponse(BaseModel):
+    label: str = None
+    website_count: int = None

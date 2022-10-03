@@ -5,10 +5,20 @@
         <script src="popup.js"></script>
     </head>
     <body>
-        <div class="container">
-            <h2>Validador de Noticias Falsas / Fake news validator</h2>
-            <p>Crees que este contenido es falso? / Do you think this page contains fake news?</p>
-            <button id="report">Reportar / Report</button>
+        <div class="title-container">
+            <h1>Fake news validator</h1>
+        </div>
+        <form method="post">
+            <p>Input the URL of the news article to get the context</p>
+            <div class="context-container">
+                <label for="context-input">URL</label>
+                <input type="text" id="context-input" required>
+            </div>
+            <button type="button" id="context-button">Contextualize</button>
+        </form>
+        <div class="report-container">
+            <p>Do you think this page contains fake news?</p>
+            <button id="report">Report</button>
         </div>
     </body>
 </html>

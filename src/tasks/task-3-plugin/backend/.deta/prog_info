@@ -1,0 +1,1 @@
+{"id":"4972f353-1415-4fbd-b4ee-e9d481a25608","space":27267,"runtime":"python3.9","name":"fake-news","path":"7cvyjy","project":"b0wo7mpm","account":"144798365827","region":"us-west-1","deps":["fastapi","deta","jsonformatter"],"envs":null,"public":true,"log_level":"debug","cron":""}
