@@ -5,6 +5,7 @@
 1. [Backend](#backend)
 2. [Frontend](#frontend)
 3. [Setup](#setup)
+4. [Workflow](#workflow)
 
 ## Backend
 
@@ -20,3 +21,7 @@ The API is deployed in a [micro](https://docs.deta.sh/docs/micros/about) Deta in
 
 1. Enable 'Developer mode' in chrome extension settings.
 2. Load frontend folder with 'Load unpacked' button in chrome.
+
+## Workflow
+
+<img src="./Web extension.png">
