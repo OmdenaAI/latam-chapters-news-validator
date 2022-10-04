@@ -2,8 +2,9 @@ import pandas as pd
 from urllib.parse import urlparse
 from deta import Deta
 from datetime import datetime
+import os
 
-deta = Deta("b0wo7mpm_XGqtBhMEUvD1U2z8MrT5J4vqv6aUnFix")
+deta = Deta(os.environ['PROJECT_KEY'])
 web_article_db = deta.Base("web-article-db")
 web_site_db = deta.Base("website-db")
 
