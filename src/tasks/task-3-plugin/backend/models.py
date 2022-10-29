@@ -25,3 +25,5 @@ class ContextInput(BaseModel):
 class ContextResponse(BaseModel):
     label: str = None
     website_count: int = None
+    authors: list = None
+    published_date: str = None

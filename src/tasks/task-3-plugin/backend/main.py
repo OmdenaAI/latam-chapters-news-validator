@@ -8,7 +8,7 @@ from models import (
     ContextResponse
 )
 from datetime import datetime
-from utils import fetch_web_article_data, fetch_website_data
+from utils import fetch_web_article_data, fetch_website_data, extract_heuristics
 from utils import get_logger
 
 logger = get_logger(__name__)
@@ -68,19 +68,19 @@ def contextualize(item: ContextInput):
     # Check if article has been reported as non-trustful
     try:
         web_article_item = fetch_web_article_data(db=web_article_db, url=item.url)
-        if web_article_item is not None:
-            report['label'] = web_article_item['category']
+        report['label'] = web_article_item['category']
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
     
     # Check if website has articles reported as non-trustful
     try:
         website_item = fetch_website_data(db=website_db, url=item.url)
-        if website_item is not None:
-            report['website_count'] = website_item['count']
+        report['website_count'] = website_item['count']
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
     
     # TODO: Get article extracted info (author, date, etc)
+    report_item = extract_heuristics(url=item.url)
+    report.update(report_item)
     
     return report

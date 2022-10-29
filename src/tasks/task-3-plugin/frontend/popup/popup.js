@@ -78,6 +78,21 @@ function get_context() {
                 report_item2.innerText = `Website has been reported: ${data.website_count} time` + (data.website_count == 1 ? '' : 's');
                 report.appendChild(report_item2);
             }
+            if(data.authors !== null){
+                let report_item3 = document.createElement("P");
+                report_item3.innerText = `Authors of article:`;
+                report.appendChild(report_item3);
+                for (const author of data.authors){
+                    let author_elem = document.createElement("P");
+                    author_elem.innerText = `${author}`;
+                    report.appendChild(author_elem);
+                }
+            }
+            if(data.published_date !== null){
+                let report_item3 = document.createElement("P");
+                report_item3.innerText = `Article was published in: ${data.published_date}`;
+                report.appendChild(report_item3);
+            }
 
             // Add report
             container.appendChild(report);
