@@ -1,24 +1,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="popup.css">
         <script src="popup.js"></script>
     </head>
     <body>
-        <div class="title-container">
-            <h1>Fake news validator</h1>
-        </div>
-        <form method="post">
-            <p>Input the URL of the news article to get the context</p>
+        <div class="extension-container">
+            <h1 class="title-text">Fake news validator</h1>
             <div class="context-container">
-                <label for="context-input">URL</label>
-                <input type="text" id="context-input" required>
+                <h3 class="context-title">Press 'Contextualize' button to validate veracity of the news article:</h3>
+                <button type="button" class="context-button" id="context-button">Contextualize</button>
             </div>
-            <button type="button" id="context-button">Contextualize</button>
-        </form>
-        <div class="report-container">
-            <p>Do you think this page contains fake news?</p>
-            <button id="report">Report</button>
+            
+            <!--
+            <div class="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="report-container">
+                <p>Do you think this page contains fake news?</p>
+                <button id="report">Report</button>
+            </div>
+            -->
         </div>
     </body>
 </html>

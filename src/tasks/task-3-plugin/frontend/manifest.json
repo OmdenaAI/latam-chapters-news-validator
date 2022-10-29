@@ -25,5 +25,5 @@
         "48": "./assets/loupe.png",
         "128": "./assets/loupe.png"
 },
-    "permissions": ["storage", "activeTab", "scripting"]
+    "permissions": ["storage", "tabs", "activeTab", "scripting"]
 }
