@@ -124,3 +124,32 @@
 .item-value {
     background-color: #DBA531;
 }
+
+.info-container {
+    width: 390px;
+    border-radius: 10px;
+    background-color: rgb(74, 74, 83);
+    font-size: 15;
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.info-container p {
+    margin-bottom: 10px;
+}
+
+li {
+    list-style-position: inside;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+li b {
+    color: #DBA531;
+}

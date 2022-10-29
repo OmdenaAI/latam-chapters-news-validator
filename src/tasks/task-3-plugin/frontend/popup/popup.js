@@ -123,6 +123,16 @@ function get_context() {
                 report_row = create_item(`Website doesn't have news article reported as Fake`, '')
             }
             report.appendChild(report_row);
+
+            // Show heuristics info
+            let info_title = document.createElement("h3");
+            info_title.innerText = "Remember...";
+            container.appendChild(info_title);
+
+            var info = document.createElement('div');
+            info.setAttribute('class', 'info-container');
+            info.innerHTML = document.getElementById('info').innerHTML;
+            container.appendChild(info)
         })
         .catch(() => console.log("Oops! Error while making request"));
     });
