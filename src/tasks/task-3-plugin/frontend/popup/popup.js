@@ -27,6 +27,22 @@ function report_db() {
     document.body.appendChild(confirmMessage);
 }
 
+function create_item(key, value) {
+    let report_row = document.createElement("div")
+    report_row.className = "report-item";
+    // Add key
+    let report_key = document.createElement("P");
+    report_key.innerText = key;
+    report_row.appendChild(report_key)
+    // Add value
+    let report_value = document.createElement("P");
+    report_value.innerText = value;
+    report_value.className = "item-value"
+    report_row.appendChild(report_value)
+
+    return report_row
+}
+
 // Function to execute when button is clicked
 function get_context() {
     chrome.tabs.query({currentWindow: true, active: true}, async function (tabs){
@@ -55,47 +71,44 @@ function get_context() {
         })
         .then((response) => response.json())
         .then((data) => {
+            // Disable button
+            const button = document.getElementById('context-button');
+            button.setAttribute('disabled', '');
+
             // Remove loader animation
             var container = document.querySelector(".extension-container");
             container.removeChild(container.lastChild);
             
             // Report container
-            var report = document.createElement("div");
-            report.className = "report-container";
-            
-            // Report elements
             let report_title = document.createElement("h3");
-            report_title.innerText = "Result:";
-            report.appendChild(report_title);
+            report_title.innerText = "What we found:";
+            container.appendChild(report_title);
+
+            // Report elements
+            let report = document.createElement("div");
+            report.className = "report-container";
+            container.appendChild(report);
 
             if(data.label !== null){
-                let report_item1 = document.createElement("P");
-                report_item1.innerText = `Found URL reported as: ${data.label}`;
-                report.appendChild(report_item1);
+                report_row = create_item(`Found URL reported as:`, data.label)
+                report.appendChild(report_row);
             }
             if(data.website_count !== null){
-                let report_item2 = document.createElement("P");
-                report_item2.innerText = `Website has been reported: ${data.website_count} time` + (data.website_count == 1 ? '' : 's');
-                report.appendChild(report_item2);
+                let count = `${data.website_count} time` + (data.website_count == 1 ? '' : 's')
+                report_row = create_item(`Website has been reported:`, count)
+                report.appendChild(report_row);
             }
             if(data.authors !== null){
-                let report_item3 = document.createElement("P");
-                report_item3.innerText = `Authors of article:`;
-                report.appendChild(report_item3);
-                for (const author of data.authors){
-                    let author_elem = document.createElement("P");
-                    author_elem.innerText = `${author}`;
-                    report.appendChild(author_elem);
-                }
+                report_row = create_item(`Website has been reported:`, data.authors.join(', '))
+                report.appendChild(report_row);
             }
             if(data.published_date !== null){
-                let report_item3 = document.createElement("P");
-                report_item3.innerText = `Article was published in: ${data.published_date}`;
-                report.appendChild(report_item3);
+                report_row = create_item(`Article was published in:`, data.published_date)
+                report.appendChild(report_row);
             }
 
             // Add report
-            container.appendChild(report);
+            
         })
         .catch(() => console.log("Oops! Error while making request"));
     });

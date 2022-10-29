@@ -90,6 +90,10 @@
     opacity: 0.6;
 }
 
+.extension-container h3 {
+    color: whitesmoke;
+}
+
 .report-container {
     width: 350px;
     border-radius: 10px;
@@ -100,9 +104,23 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    align-content: flex-start;
 }
 
 .report-container p {
     padding: 3px;
+}
+
+.report-item {
+    display: flex;
+    background-color: #05659E;
+    border: solid #858585;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.item-value {
+    background-color: #DBA531;
 }
