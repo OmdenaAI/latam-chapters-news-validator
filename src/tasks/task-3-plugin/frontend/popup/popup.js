@@ -35,11 +35,12 @@ function create_item(key, value) {
     report_key.innerText = key;
     report_row.appendChild(report_key)
     // Add value
-    let report_value = document.createElement("P");
-    report_value.innerText = value;
-    report_value.className = "item-value"
-    report_row.appendChild(report_value)
-
+    if (value.length > 0) {
+        let report_value = document.createElement("P");
+        report_value.innerText = value;
+        report_value.className = "item-value"
+        report_row.appendChild(report_value)
+    }
     return report_row
 }
 
@@ -89,26 +90,39 @@ function get_context() {
             report.className = "report-container";
             container.appendChild(report);
 
+            // Authors
+            if(data.authors !== null){
+                report_row = create_item(`Authors:`, data.authors.join(', '))
+            }
+            else {
+                report_row = create_item(`Authors:`, 'No authors found')
+            }
+            report.appendChild(report_row);
+            // Publish date
+            if(data.published_date !== null){
+                report_row = create_item(`Article was published in:`, data.published_date)
+            }
+            else {
+                report_row = create_item(`Article was published in:`, 'No date found')
+            }
+            report.appendChild(report_row);
+            // Label
             if(data.label !== null){
                 report_row = create_item(`Found URL reported as:`, data.label)
-                report.appendChild(report_row);
             }
+            else {
+                report_row = create_item(`URL not reported as Fake in our database`, '')
+            }
+            report.appendChild(report_row);
+            // Site statistics
             if(data.website_count !== null){
                 let count = `${data.website_count} time` + (data.website_count == 1 ? '' : 's')
                 report_row = create_item(`Website has been reported:`, count)
-                report.appendChild(report_row);
             }
-            if(data.authors !== null){
-                report_row = create_item(`Website has been reported:`, data.authors.join(', '))
-                report.appendChild(report_row);
+            else {
+                report_row = create_item(`Website doesn't have news article reported as Fake`, '')
             }
-            if(data.published_date !== null){
-                report_row = create_item(`Article was published in:`, data.published_date)
-                report.appendChild(report_row);
-            }
-
-            // Add report
-            
+            report.appendChild(report_row);
         })
         .catch(() => console.log("Oops! Error while making request"));
     });
