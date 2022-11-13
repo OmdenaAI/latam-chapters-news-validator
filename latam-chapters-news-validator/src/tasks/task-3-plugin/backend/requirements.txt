@@ -1,0 +1,4 @@
+fastapi
+deta
+jsonformatter
+newspaper3k

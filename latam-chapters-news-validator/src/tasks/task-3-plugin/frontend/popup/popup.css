@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.extension-container {
+    width: 420px;
+    background-color: rgb(44, 44, 44);
+    font-family: Inter,sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px 10px;
+}
+
+.title-text {
+    color: whitesmoke;
+}
+
+.context-container {
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.context-title {
+    padding-bottom: 15px;
+}
+
+.context-button {
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#ffffff;
+    background-color: rgb(44, 44, 44);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.context-button:hover{
+    cursor: pointer;
+    color:#000000;
+    background-color:#FFFFFF;
+}
+
+@media all and (max-width:30em){
+    .context-button{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+.loader {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 40px;
+    height: 10px;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0) }
+    to { transform: translateY(-10px) }
+}
+
+.loader div {
+    width: 8px;
+    height: 8px;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    animation: bounce 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate;
+}
+
+.loader div:nth-child(2) {
+    animation-delay: 0.1s;
+    opacity: 0.8;
+}
+
+.loader div:nth-child(3) {
+    animation-delay: 0.2s;
+    opacity: 0.6;
+}
+
+.extension-container h3 {
+    color: whitesmoke;
+}
+
+.report-container {
+    width: 350px;
+    border-radius: 10px;
+    background-color: rgb(74, 74, 83);
+    font-size: 15;
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+.report-container p {
+    padding: 3px;
+}
+
+.report-item {
+    display: flex;
+    background-color: #05659E;
+    border: solid #858585;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.item-value {
+    background-color: #DBA531;
+}
+
+.info-container {
+    width: 390px;
+    border-radius: 10px;
+    background-color: rgb(74, 74, 83);
+    font-size: 15;
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.info-container p {
+    margin-bottom: 10px;
+}
+
+li {
+    list-style-position: inside;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+li b {
+    color: #DBA531;
+}

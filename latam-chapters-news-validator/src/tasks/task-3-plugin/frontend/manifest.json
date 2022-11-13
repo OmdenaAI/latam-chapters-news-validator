@@ -1,0 +1,29 @@
+{
+    "name": "News Validator",
+    "description": "This plugin allows to contextify a piece of news found on the web. It also allows to report when a news entry when you think it's fake.",
+    "version": "0.1",
+    "manifest_version": 3,
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content-script.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "./assets/loupe.png",
+            "32": "./assets/loupe.png",
+            "48": "./assets/loupe.png",
+            "128": "./assets/loupe.png"
+        }
+    },
+    "icons": {
+        "16": "./assets/loupe.png",
+        "32": "./assets/loupe.png",
+        "48": "./assets/loupe.png",
+        "128": "./assets/loupe.png"
+},
+    "permissions": ["storage", "tabs", "activeTab", "scripting"]
+}
