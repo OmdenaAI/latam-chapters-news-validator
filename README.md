@@ -100,7 +100,7 @@
     </div>   
     <footer>
         <p>
-            <a href="News Veracity Validator in Latam - Phase 1 (omdena.com)"> News Veracity Validator in LATAM</a>
+            <a href="https://omdena.com/chapter-challenges/news-veracity-validator-in-latam-phase-1/"> News Veracity Validator in LATAM</a>
         </p>
         <p>
             <a href="https://omdena.com/">Omdena</a> is a global community of 100,000+ data scientists, 
