@@ -19,7 +19,7 @@
 - Results           - Folder to store final analysis modelling results for the project.
 - Tasks             - Master folder for all tasks
   - All Task Folder names should follow specific naming convention
-  - All Task folder names should be in chronologial order (from 1 to n)
+  - All Task folder names should be in chronological order (from 1 to n)
   - All Task folders should have a README.md file with task Details and task goals along with an info table containing all code/notebook files with their links and information
 
 
