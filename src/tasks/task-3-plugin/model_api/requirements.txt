@@ -1,0 +1,5 @@
+fastapi
+deta
+jsonformatter
+transformers
+setfit
