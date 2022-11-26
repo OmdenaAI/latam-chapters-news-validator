@@ -1,4 +1,5 @@
 fastapi
 deta
 jsonformatter
+#git+https://github.com/TinsaeW/newspaper@master#egg=newspaper3k
 newspaper3k
