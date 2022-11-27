@@ -10,6 +10,6 @@ Note : Please Follow the below guidelines to create task folders
 
 | Task No| Task Name| Description|
 |-|-|-|
-|1| Web Scrapping | Web Scrapping|
+|1| Web Scraping  | Web Scraping |
 |2| Heuristics | Heuristics and Data Model|
 |3| Plug-in | Frontend and Backend, Plugin used in the Project|
