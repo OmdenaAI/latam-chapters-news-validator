@@ -8,9 +8,8 @@ Note : Please Follow the below guidelines to create task folders
 
 ### Task Table
 
-| Task No| Task Name 
+| Task No| Task Name| Description|
 |-|-|-|
-|0| Knowdledg |         |
-|1| Web Scrapping |         |
-|2| Heuristics |         |
-|3| Plug-in |         |
+|1| Web Scrapping | Web Scrapping|
+|2| Heuristics | Heuristics and Data Model|
+|3| Plug-in | Frontend and Backend, Plugin used in the Project|
